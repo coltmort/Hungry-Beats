@@ -14,7 +14,7 @@ SO that I can cook delicious meals while listening to music that corresponds to 
 
 I also have dietary restrictions, so I want to be able to filter recipes based on my allergies and dietary preferences.
 
-# Acceptance criteria
+# Acceptance criteria ✔️
 When I am hungry.
 THEN I am presented with a random recipe.
 WHEN I want to listen to music.
