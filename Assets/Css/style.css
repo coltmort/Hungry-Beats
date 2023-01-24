@@ -1,0 +1,13 @@
+html{
+    height: auto;
+    background: linear-gradient(to right,#220008,#1d0319);
+}
+body{
+    min-height: 100%;
+}
+#musicPlayer{
+    display: flex;
+    flex-basis: 1 1 0;
+    justify-content: center;
+    margin-top: 35%;
+}
