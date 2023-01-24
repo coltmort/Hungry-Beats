@@ -30,9 +30,9 @@ THEN there is a button to save it.
 - Gabe Faber
 
 # Built using 🚧
-- HTML - Skeleton of the website.
-- CSS - Used for styling.
-- JavaScript - Used for the actual functionality of the project.
+- HTML - used to create the structure & content withing the webpage.
+- CSS - used to control the layout, design, and visual presentation of the HTML elements on the website.
+- JavaScript - used to embed both api's as well as utilize them by having the ability to listen to music while you're being "dished"😎 up recipes to create!
 
 # APIs used 🖥️
 Used for searching Recipes:
