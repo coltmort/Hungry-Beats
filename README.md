@@ -34,6 +34,11 @@ THEN there is a button to save it.
 - CSS - used to control the layout, design, and visual presentation of the HTML elements on the website.
 - JavaScript - used to embed both api's as well as utilize them by having the ability to listen to music while you're being "dished"😎 up recipes to create!
 
+# Trials we experienced 😤
+-
+-
+-
+
 # APIs used 🖥️
 Used for searching Recipes:
 - "https://developer.edamam.com/edamam-recipe-api"
@@ -41,10 +46,8 @@ Used for searching Recipes:
 Used for searching music:
 - "https://developers.soundcloud.com/docs/api/guide"
 
-# Trials we experienced 😤
-- 
-- 
-- 
+# Hungry beats proposal 🗣️
+- "https://docs.google.com/document/d/1c5f4Ux8l0pBIJDXMaYtAFM42fXVoOt7-9bCXEb4AX-8/edit"
 
 # Figma Wireframe 🔌
 - "https://www.figma.com/file/eICwPgqaHYFXVULctPFEPj0z/Hungry-Beats?node-id=0%3A1&t=3jSQZd2gFFkqsYqr-1"
