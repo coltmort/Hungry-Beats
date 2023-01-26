@@ -12,6 +12,7 @@ let currentRecipe
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
 
+
 const player = SC.Widget(document.querySelector('iframe'));
 const volumeSlider = document.querySelector('.volume-slider');
 const volumeDisplay = document.querySelector('.volume-display');
@@ -44,10 +45,10 @@ function displayRecipe() {
     console.log(currentRecipe)
     recipeImage.setAttribute('src', currentRecipe.images.REGULAR.url)
     recipeTitle.innerText = currentRecipe.label
-    
+
 }
 
-function saveCurrentRecipe(){
+function saveCurrentRecipe() {
     cachedRecipes.unshift(currentRecipe)
     localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
 }
