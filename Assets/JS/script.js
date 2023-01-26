@@ -4,8 +4,13 @@ let recievedRecipes = {}
 let nextRecipeClickCounter = 0
 let recipeTitle = document.querySelector('.recipe-name')
 let recipeImage = document.querySelector('.recipe-image')
+let nextRecipeButton = document.querySelector('.next-recipe-button')
+let saveRecipeButton = document.querySelector('.save-recipe-button')
+let cachedRecipes = []
+let currentRecipe
 
-
+nextRecipeButton.addEventListener('click', displayRecipe)
+saveRecipeButton.addEventListener('click', saveCurrentRecipe)
 
 function getEdamamApi(){
     return new Promise(function(resolve, reject){
@@ -19,13 +24,18 @@ function getEdamamApi(){
 
 function displayRecipe() {
     nextRecipeClickCounter++
-    recipe = recievedRecipes[nextRecipeClickCounter].recipe
-    console.log(recipe)
-    recipeImage.setAttribute('src', recipe.images.REGULAR.url)
-    recipeTitle.innerText = recipe.label
+    currentRecipe = recievedRecipes[nextRecipeClickCounter].recipe
+    console.log(currentRecipe)
+    recipeImage.setAttribute('src', currentRecipe.images.REGULAR.url)
+    recipeTitle.innerText = currentRecipe.label
     
 }
 
-getEdamamApi()
-    .then(displayRecipe)
+function saveCurrentRecipe(){
+    cachedRecipes.unshift(currentRecipe)
+    localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
+}
+
+// getEdamamApi()
+    // .then(displayRecipe)
 
