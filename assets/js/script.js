@@ -12,6 +12,22 @@ let currentRecipe
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
 
+const player = SC.Widget(document.querySelector('iframe'));
+const volumeSlider = document.querySelector('.volume-slider');
+const volumeDisplay = document.querySelector('.volume-display');
+
+player.bind(SC.Widget.Events.READY, function() {
+player.getVolume(function(volume) {
+volumeSlider.value = volume;
+volumeDisplay.innerText = volume + '%';
+});
+});
+
+volumeSlider.addEventListener('input', function() {
+player.setVolume(this.value);
+volumeDisplay.innerText = this.value + '%';
+});
+
 function getEdamamApi(){
     return new Promise(function(resolve, reject){
     fetch(edamamApiURL)
