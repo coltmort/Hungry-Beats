@@ -773,10 +773,6 @@ video {
   width: 66.666667%;
 }
 
-.w-2 {
-  width: 0.5rem;
-}
-
 .min-w-full {
   min-width: 100%;
 }
@@ -807,10 +803,6 @@ video {
 
 .basis-full {
   flex-basis: 100%;
-}
-
-.basis-1 {
-  flex-basis: 0.25rem;
 }
 
 .table-auto {
