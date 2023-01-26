@@ -4,6 +4,7 @@ let recievedRecipes = {}
 let nextRecipeClickCounter = 0
 let recipeTitle = document.querySelector('.recipe-name')
 let recipeImage = document.querySelector('.recipe-image')
+let imageLink = document.querySelectorAll(".imageLink")
 let nextRecipeButton = document.querySelector('.next-recipe-button')
 let saveRecipeButton = document.querySelector('.save-recipe-button')
 let cachedRecipes = []
@@ -44,6 +45,9 @@ function displayRecipe() {
     currentRecipe = recievedRecipes[nextRecipeClickCounter].recipe
     console.log(currentRecipe)
     recipeImage.setAttribute('src', currentRecipe.images.REGULAR.url)
+    imageLink.forEach(e => {
+        e.setAttribute('href', currentRecipe.url)
+    })
     recipeTitle.innerText = currentRecipe.label
 
 }
