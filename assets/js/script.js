@@ -12,14 +12,15 @@ let currentRecipe
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
 
-function getEdamamApi(){
-    return new Promise(function(resolve, reject){
-    fetch(edamamApiURL)
-    .then(response => 
-       response.json()
-    .then(data => 
-        resolve(recievedRecipes = data.hits)
-       ))})
+function getEdamamApi() {
+    return new Promise(function (resolve, reject) {
+        fetch(edamamApiURL)
+            .then(response =>
+                response.json()
+                    .then(data =>
+                        resolve(recievedRecipes = data.hits)
+                    ))
+    })
 }
 
 function displayRecipe() {
@@ -28,14 +29,14 @@ function displayRecipe() {
     console.log(currentRecipe)
     recipeImage.setAttribute('src', currentRecipe.images.REGULAR.url)
     recipeTitle.innerText = currentRecipe.label
-    
+
 }
 
-function saveCurrentRecipe(){
+function saveCurrentRecipe() {
     cachedRecipes.unshift(currentRecipe)
     localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
 }
 
-getEdamamApi()
-    .then(displayRecipe)
+//getEdamamApi()
+ //   .then(displayRecipe)
 
