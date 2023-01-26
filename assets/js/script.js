@@ -4,6 +4,7 @@ let recievedRecipes = {}
 let nextRecipeClickCounter = 0
 let recipeTitle = document.querySelector('.recipe-name')
 let recipeImage = document.querySelector('.recipe-image')
+let imageLink = document.querySelectorAll(".imageLink")
 let nextRecipeButton = document.querySelector('.next-recipe-button')
 let saveRecipeButton = document.querySelector('.save-recipe-button')
 let savedRecipeContainer = document.querySelector('.saved-recipe-container')
@@ -12,6 +13,23 @@ let currentRecipe
 
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
+
+
+const player = SC.Widget(document.querySelector('iframe'));
+const volumeSlider = document.querySelector('.volume-slider');
+const volumeDisplay = document.querySelector('.volume-display');
+
+player.bind(SC.Widget.Events.READY, function() {
+player.getVolume(function(volume) {
+volumeSlider.value = volume;
+volumeDisplay.innerText = volume + '%';
+});
+});
+
+volumeSlider.addEventListener('input', function() {
+player.setVolume(this.value);
+volumeDisplay.innerText = this.value + '%';
+});
 
 function getEdamamApi(){
     return new Promise(function(resolve, reject){
@@ -28,11 +46,14 @@ function displayRecipe() {
     currentRecipe = recievedRecipes[nextRecipeClickCounter].recipe
     console.log(currentRecipe)
     recipeImage.setAttribute('src', currentRecipe.images.REGULAR.url)
+    imageLink.forEach(e => {
+        e.setAttribute('href', currentRecipe.url)
+    })
     recipeTitle.innerText = currentRecipe.label
-    
+
 }
 
-function saveCurrentRecipe(){
+function saveCurrentRecipe() {
     cachedRecipes.unshift(currentRecipe)
     localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
     displayCachedRecipes()
