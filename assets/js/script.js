@@ -37,6 +37,6 @@ function saveCurrentRecipe() {
     localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
 }
 
-//getEdamamApi()
- //   .then(displayRecipe)
+getEdamamApi()
+    .then(displayRecipe)
 
