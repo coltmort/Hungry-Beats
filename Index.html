@@ -6,55 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hungry Beats</title>
-    <link rel="stylesheet" href="./Assets/Css/reset.css">
-    <link rel="stylesheet" href="./Assets/Css/style.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="./dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800;900&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="from-teal-900 via-teal-800 via-teal-600 via-teal-700 via-teal-800 via-teal-900 via-teal-600 to-teal-900 bg-gradient-to-tr font-montserrat min-h-screen max-h-screen">
 
-    <header>
-        <h1>Hungry Beats</h1>
+    <header class="border-b-2 border-gray-400">
+        <h1 class=" text-2xl font-medium m-3 text-white">Hungry Beats</h1>
     </header>
 
-    <main>
-        <section>
-            <h2>Maybe you should eat:</h2>
+    <main class="container flex flex-row gap-10 min-w-full">
+        <aside class="border-r-2 border-black basis-1/4 grow-0 md-basis-3/8">
+            <h2>Filter</h2>
+            <div class="flex flex-col">
+                <div><span class="symbol mr-1">X</span>Nuts</div>
+                <div><span class="symbol mr-1">X</span>Milk</div>
+                <div><span class="symbol mr-1">X</span>Gluten</div>
+                <div><span class="symbol mr-1">X</span>Soy</div>
+            </div>
+        </aside>
+        <section class="basis-full flex grow items-center flex-col bg-white bg-opacity-80 rounded-md mt-5">
+            <h2 class="text-4xl">Maybe you should eat:</h2>
             <div>
 
-                <p class="recipe-name">Recipe Name</p>
+                <p class="recipe-name text-3xl">Recipe Name</p>
                 <img class="recipe-image" src="https://via.placeholder.com/200" alt="Placeholder Image" />
 
             </div>
             <div>
-                <button>Save</button>
-                <button>Next Recipe</button>
+                <button class="save-recipe-button">Save</button>
+                <button class="next-recipe-button">Next Recipe</button>
             </div>
         </section>
+        <aside class="border-l-2 basis-1/4 flex flex-col items-center gap-2 grow-0">
+            <h2>Saved Recipes</h2>
+                <div class="card flex flex-col border-b w-2/3">
+                    <img src="https://via.placeholder.com/100"></img>
+                    <a href="">Saved Recipe Name</a>
+                </div>
+                <div class="card flex flex-col border-b w-2/3">
+                    <img src="https://via.placeholder.com/100"></img>
+                    <a href="">Saved Recipe Name</a>
+                </div>
+
+                <!-- <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
+                <p>Name of recipe</p>
+                <br></br>
+                <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
+                <p>Name of recipe</p>
+                <br></br>
+                <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
+                <p>Name of recipe</p> -->
+                <button>Clear Recipes</button>
+        </aside>
     </main>
 
-    <aside>
-        <h2>Saved Recipes</h2>
-            <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
-            <p>Name of recipe</p>
-            <br></br>
-            <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
-            <p>Name of recipe</p>
-            <br></br>
-            <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
-            <p>Name of recipe</p>
-            <button>Clear Recipes</button>
-    </aside>
+    
 
-    <aside>
-        <h2>Filter</h2>
-        <div>
-            <button>Filter</button>
-            <a href="#">Nuts</a>
-            <a href="#">Milk</a>
-            <a href="#">Gluten</a>
-            <a href="#">Soy</a>
-        </div>
-    </aside>
+    
 
  
     

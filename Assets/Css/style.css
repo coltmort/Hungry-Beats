@@ -1,10 +1,16 @@
-html{
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* html{
     height: auto;
-    background: linear-gradient(to right,#220008,#1d0319);
+    background: darkgrey;
 }
 body{
     min-height: 100%;
 }
+*/
+
 #musicPlayer{
     display: flex;
     flex-basis: 1 1 0;
