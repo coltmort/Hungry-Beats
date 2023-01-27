@@ -14,12 +14,12 @@ body{
 #musicPlayer {
     position: relative; /* Allows for absolute positioning of the volume slider container */
     text-align: center; /* Centers the Soundcloud widget */
-    width: 80%; /* Sets the width of the music player container to be 80% of the screen */
+    width: 65%; /* Sets the width of the music player container to be 80% of the screen */
     margin: 0 auto; /* Centers the music player container horizontally */
 }
 
 .volume-slider-container {
-    position: absolute; /* Positions the container above the Soundcloud widget */
+    position: absolute; /* Positions the container below the Soundcloud widget */
     bottom: 0; /* Positions the container at the bottom of the music player container */
     left: 50%; /* Positions the container horizontally in the center */
     transform: translateX(-50%); /* Centers the container horizontally */
@@ -38,7 +38,7 @@ body{
 }
 
 iframe{
-  width: 100%;
+  width: 75%;
   height:250px;
   display:block;
   margin:auto;
