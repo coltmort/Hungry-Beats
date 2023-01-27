@@ -17,3 +17,26 @@ body{
     justify-content: center;
     margin-top: 2vh;
 }
+<<<<<<< Updated upstream:assets/css/style.css
+=======
+
+.symbol .mr-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px; 
+    background-color: white;
+}
+
+/* On mouse-over, add a grey background color */
+.symbol .mr-1:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .symbol .mr-1 input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+>>>>>>> Stashed changes:Assets/Css/style.css
