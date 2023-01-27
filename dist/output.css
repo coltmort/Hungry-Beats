@@ -7,6 +7,10 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+* {
+  color: white; 
+}
+
 *,
 ::before,
 ::after {
@@ -1931,11 +1935,13 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+  color: black; 
 }
 
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+  color: black; 
 }
 
 .font-medium {
