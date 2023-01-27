@@ -67,8 +67,10 @@ function refreshCachedRecipes(){
 }
 
 function displayCachedRecipes(){
-    let displayedRecipes = document.querySelectorAll('.div.card')
-    displayedRecipes.forEach
+    let displayedRecipes = document.querySelectorAll('div.card')
+    displayedRecipes.forEach((element) =>{
+        element.remove()
+    })
     refreshCachedRecipes()
 
     if(typeof cachedRecipes !== 'undefined' && cachedRecipes.length > 0){
