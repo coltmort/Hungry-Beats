@@ -17,3 +17,11 @@ body{
     justify-content: center;
     margin-top: 2vh;
 }
+
+html{
+    color: white;
+}
+
+section{
+    color: black;
+}
