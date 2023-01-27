@@ -6,12 +6,17 @@ let recipeImage = document.querySelector('.recipe-image')
 let imageLink = document.querySelectorAll(".imageLink")
 let nextRecipeButton = document.querySelector('.next-recipe-button')
 let saveRecipeButton = document.querySelector('.save-recipe-button')
+let applyFilterButton = document.getElementById("filter-apply")
 let cachedRecipes = []
 let currentRecipe
 let nextRecipeClickCounter
 
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
+applyFilterButton.addEventListener("click",()=>{
+    getEdamamApi()
+        .then(displayRecipe)
+})
 
 const player = SC.Widget(document.querySelector('iframe'));
 const volumeSlider = document.querySelector('.volume-slider'); // Select the volume slider element from the HTML
@@ -36,10 +41,10 @@ function getEdamamApi(){
     let checkmilk = document.getElementById('check-milk')
     let checkgluten = document.getElementById('check-gluten')
     let checksoy = document.getElementById('check-soy')
-    if (checknuts.checked == true) edamamApiURL =+ "&health=tree-nut-free"
-    if (checkmilk.checked == true) edamamApiURL =+ "&health=dairy-free"
-    if (checkgluten.checked == true) edamamApiURL =+ "&health=gluten-free"
-    if (checksoy.checked == true) edamamApiURL =+ "&health=soy-free"
+    if (checknuts.checked == true) edamamApiURL += "&health=tree-nut-free"
+    if (checkmilk.checked == true) edamamApiURL += "&health=dairy-free"
+    if (checkgluten.checked == true) edamamApiURL += "&health=gluten-free"
+    if (checksoy.checked == true) edamamApiURL += "&health=soy-free"
 
     return new Promise(function(resolve, reject){
     fetch(edamamApiURL)
