@@ -8,11 +8,14 @@ let imageLink = document.querySelectorAll(".imageLink")
 let nextRecipeButton = document.querySelector('.next-recipe-button')
 let saveRecipeButton = document.querySelector('.save-recipe-button')
 let savedRecipeContainer = document.querySelector('.saved-recipe-container')
+let clearRecipesButton = document.querySelector('.clear-recipe-button')
 let cachedRecipes = []
 let currentRecipe
 
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
+clearRecipesButton.addEventListener('click', clearCachedRecipes)
+
 
 const player = SC.Widget(document.querySelector('iframe'));
 const volumeSlider = document.querySelector('.volume-slider'); // Select the volume slider element from the HTML
@@ -80,7 +83,7 @@ function displayCachedRecipes(){
         var cachedIMG = element.images.SMALL.url
         var cachedTitle = element.label
         var card = document.createElement('div')
-        card.classList.add('card', 'flex', 'flex-col', 'border-b', 'w-2/3')
+        card.classList.add('card', 'flex', 'flex-col', 'border-b-2', 'w-2/3', 'my-2', 'gap-x-2')
         var newImg = document.createElement('img')
         newImg.setAttribute('href', cachedURL)
         newImg.setAttribute('src', cachedIMG)
@@ -93,6 +96,12 @@ function displayCachedRecipes(){
 
 })
 }}
+
+function clearCachedRecipes(){
+    cachedRecipes = []
+    localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
+    displayCachedRecipes()
+}
 
 
 displayCachedRecipes()

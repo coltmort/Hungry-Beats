@@ -617,6 +617,14 @@ video {
   left: -0.25rem;
 }
 
+.bottom-5 {
+  bottom: 1.25rem;
+}
+
+.bottom-20 {
+  bottom: 5rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -657,13 +665,22 @@ video {
   margin: 0.75rem;
 }
 
+.m-4 {
+  margin: 1rem;
+}
+
 .m-5 {
   margin: 1.25rem;
 }
 
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mr-1 {
@@ -770,12 +787,53 @@ video {
   display: none;
 }
 
+.h-auto {
+  height: auto;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.h-4\/5 {
+  height: 80%;
+}
+
+.h-1\/5 {
+  height: 20%;
+}
+
+.h-3\/5 {
+  height: 60%;
+}
+
+.h-2\/3 {
+  height: 66.666667%;
+}
+
+.h-2\/6 {
+  height: 33.333333%;
+}
+
+.h-5\/6 {
+  height: 83.333333%;
+}
+
+.h-3\/4 {
+  height: 75%;
+}
+
+.max-h-10 {
+  max-height: 2.5rem;
+}
+
 .max-h-screen {
   max-height: 100vh;
 }
 
-.min-h-screen {
-  min-height: 100vh;
+.max-h-fit {
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 .w-2\/3 {
@@ -1290,8 +1348,17 @@ video {
   gap: 2.5rem;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-x-2 {
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1623,6 +1690,10 @@ video {
   border-width: 1px;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-x {
   border-left-width: 1px;
   border-right-width: 1px;
@@ -1713,6 +1784,18 @@ video {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
 }
 
+.bg-gradient-to-br {
+  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
 .from-teal-900 {
   --tw-gradient-from: #134e4a;
   --tw-gradient-to: rgb(19 78 74 / 0);
@@ -1724,19 +1807,9 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), #115e59, var(--tw-gradient-to);
 }
 
-.via-teal-600 {
-  --tw-gradient-to: rgb(13 148 136 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), #0d9488, var(--tw-gradient-to);
-}
-
 .via-teal-700 {
   --tw-gradient-to: rgb(15 118 110 / 0);
   --tw-gradient-stops: var(--tw-gradient-from), #0f766e, var(--tw-gradient-to);
-}
-
-.via-teal-900 {
-  --tw-gradient-to: rgb(19 78 74 / 0);
-  --tw-gradient-stops: var(--tw-gradient-from), #134e4a, var(--tw-gradient-to);
 }
 
 .to-teal-900 {
@@ -2363,11 +2436,51 @@ body{
 }
 */
 
-#musicPlayer{
-  display: flex;
-  flex-basis: 1 1 0;
-  justify-content: center;
-  margin-top: 2vh;
+#musicPlayer {
+  position: relative;
+  /* Allows for absolute positioning of the volume slider container */
+  text-align: center;
+  /* Centers the Soundcloud widget */
+  width: 80%;
+  /* Sets the width of the music player container to be 80% of the screen */
+  margin: 0 auto;
+  /* Centers the music player container horizontally */
+}
+
+.volume-slider-container {
+  position: absolute;
+  /* Positions the container above the Soundcloud widget */
+  bottom: 0;
+  /* Positions the container at the bottom of the music player container */
+  left: 50%;
+  /* Positions the container horizontally in the center */
+  transform: translateX(-50%);
+  /* Centers the container horizontally */
+  width: 100%;
+  /* Sets the width of the container to be the full width of its parent */
+  text-align: center;
+  /* Centers the volume slider horizontally within its container */
+}
+
+.volume-slider {
+  width: 50%;
+  /* Sets the width of the slider to be 50% of its container */
+  margin: 0 auto;
+  /* Centers the slider horizontally within its container */
+}
+
+.volume-display {
+  display: inline-block;
+  /* Displays the element as an inline-block */
+  text-align: center;
+  /* Centers the text within the element */
+}
+
+iframe{
+  width: 100%;
+  height:250px;
+  display:block;
+  margin:auto;
 }
 
 .hover\:bg-gray-100:hover {
