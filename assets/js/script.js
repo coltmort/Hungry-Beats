@@ -35,6 +35,7 @@ volumeSlider.addEventListener('input', function() {
 });
 
 function getEdamamApi(){
+    nextRecipeClickCounter = 0
     return new Promise(function(resolve, reject){
     fetch(edamamApiURL)
     .then(response => 
@@ -45,7 +46,9 @@ function getEdamamApi(){
 }
 
 function displayRecipe() {
-    nextRecipeClickCounter++
+    if ((nextRecipeClickCounter+1) >= (recievedRecipes.length)){
+        getEdamamApi()
+    }
     currentRecipe = recievedRecipes[nextRecipeClickCounter].recipe
     console.log(currentRecipe)
     recipeImage.setAttribute('src', currentRecipe.images.REGULAR.url)
@@ -53,7 +56,7 @@ function displayRecipe() {
         e.setAttribute('href', currentRecipe.url)
     })
     recipeTitle.innerText = currentRecipe.label
-
+    nextRecipeClickCounter++
 }
 
 function saveCurrentRecipe() {
