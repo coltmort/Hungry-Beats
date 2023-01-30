@@ -33,9 +33,11 @@ THEN there is a button to save it.
 - HTML - used to create the structure & content withing the webpage.
 - CSS - used to control the layout, design, and visual presentation of the HTML elements on the website.
 - JavaScript - used to embed both api's as well as utilize them by having the ability to listen to music while you're being "dished"😎 up recipes to create!
+- Tailwind - Another version of styling our application, not all of us knew tailwind at the time so as a group we learned a lot about it!
+- Figma - Used for making wireframes and making crucial visual design calls.
 
 # Trials we experienced 😤
--
+- Getting the soundbar to display correctly was difficult.
 -
 -
 
@@ -56,4 +58,4 @@ Used for searching music:
 - ""
 
 # Display of working site 🌐
-![Alt text](https://i.imgur.com/FH7xjx3.png)
+![Alt text](https://i.imgur.com/sF7mOXR.png)
