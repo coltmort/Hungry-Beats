@@ -26,10 +26,16 @@
         <aside class="border-r-2 border-black basis-1/4 grow-0 md-basis-3/8">
             <h2 class="text-white text-2xl m-3">Filter ✒️</h2>
             <div class="flex flex-col text-white m-5">
-                <div><input type="checkbox" id="check-nuts">Nuts</div>
-                <div><input type="checkbox" id="check-milk">Milk</div>
-                <div><input type="checkbox" id="check-gluten">Gluten</div>
-                <div><input type="checkbox" id="check-soy">Soy</div>
+                <div><input class="m-2" type="checkbox" id="check-nuts">Nut-free</div>
+                <div><input class="m-2" type="checkbox" id="check-dairy">Dairy-free</div>
+                <div><input class="m-2" type="checkbox" id="check-gluten">Gluten-free</div>
+                <div><input class="m-2" type="checkbox" id="check-soy">Soy-free</div>
+                <div><input class="m-2" type="checkbox" id="check-sugar">Low Sugar</div>
+                <div><input class="m-2" type="checkbox" id="check-kosher">Kosher</div>
+                <div><input class="m-2" type="checkbox" id="check-paleo">Paleo</div>
+                <div><input class="m-2" type="checkbox" id="check-pork">Pork-free</div>
+                <div><input class="m-2" type="checkbox" id="check-vegan">Vegan</div>
+                <div><input class="m-2" type="checkbox" id="check-vegetarian">Vegetarian</div>
                 <div><button type="button" id="filter-apply" class="bg-white hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow m-5">Apply</button></div>
 
             </div>
@@ -49,7 +55,7 @@
         </section>
         <aside class="border-l-2 border-white basis-1/4 flex flex-col gap-2 grow-0 items-center relative max-h-screen">
             <p class="text-xl mt-4">Saved Recipes</p>
-            <div class="saved-recipe-container flex flex-col items-center overflow-scroll h-3/4">
+            <div class="saved-recipe-container flex flex-col items-center overflow-y-scroll h-3/4">
                 
             </div>
             <button class="clear-recipe-button bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow absolute bottom-20 mx-auto">Clear Recipes</button>

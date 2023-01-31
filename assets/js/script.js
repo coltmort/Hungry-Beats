@@ -38,16 +38,32 @@ volumeSlider.addEventListener('input', function () {
     volumeDisplay.innerText = this.value + '%'; // Updates the volume display to show the new volume level
 });
 
-function getEdamamApi(){
-    nextRecipeClickCounter = 0
+function applyFilters(){
     let checknuts = document.getElementById('check-nuts')
-    let checkmilk = document.getElementById('check-milk')
+    let checkdairy = document.getElementById('check-dairy')
     let checkgluten = document.getElementById('check-gluten')
     let checksoy = document.getElementById('check-soy')
+    let checksugar = document.getElementById('check-sugar')
+    let checkkosher = document.getElementById('check-kosher')
+    let checkpaleo = document.getElementById('check-paleo')
+    let checkpork = document.getElementById('check-pork')
+    let checkvegan = document.getElementById('check-vegan')
+    let checkvegetarian = document.getElementById('check-vegetarian')
     if (checknuts.checked == true) edamamApiURL += "&health=tree-nut-free"
-    if (checkmilk.checked == true) edamamApiURL += "&health=dairy-free"
+    if (checkdairy.checked == true) edamamApiURL += "&health=dairy-free"
     if (checkgluten.checked == true) edamamApiURL += "&health=gluten-free"
     if (checksoy.checked == true) edamamApiURL += "&health=soy-free"
+    if (checksugar.checked === true) edamamApiURL += "&health=low-sugar"
+    if (checkkosher.checked === true) edamamApiURL += "&health=kosher"
+    if (checkpaleo.checked === true) edamamApiURL += "&health=paleo"
+    if (checkpork.checked === true) edamamApiURL += "&health=pork-free"
+    if (checkvegan.checked === true) edamamApiURL += "&health=vegan"
+    if (checkvegetarian.checked === true) edamamApiURL += "&health=vegetarian"
+}
+
+function getEdamamApi(){
+    nextRecipeClickCounter = 0
+    applyFilters()
     return new Promise(function(resolve, reject){
     fetch(edamamApiURL)
     .then(response => 
