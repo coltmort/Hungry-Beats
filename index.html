@@ -21,14 +21,17 @@
         <div class='' id="edamam-badge" data-color="transparent"></div>
     </header>
 
+
     <main class="container flex flex-row gap-10 min-w-full max-h-fit">
-        <aside class="border-r-2 border-white basis-1/4 grow-0 md-basis-3/8">
-            <h2>Filter</h2>
-            <div class="flex flex-col">
-                <div><input type="checkbox"><span class="symbol mr-1"></span>Nuts</div>
-                <div><input type="checkbox"><span class="symbol mr-1"></span>Milk</div>
-                <div><input type="checkbox"><span class="symbol mr-1"></span>Gluten</div>
-                <div><input type="checkbox"><span class="symbol mr-1"></span>Soy</div>
+        <aside class="border-r-2 border-black basis-1/4 grow-0 md-basis-3/8">
+            <h2 class="text-white text-2xl m-3">Filter ✒️</h2>
+            <div class="flex flex-col text-white m-5">
+                <div><input type="checkbox" id="check-nuts">Nuts</div>
+                <div><input type="checkbox" id="check-milk">Milk</div>
+                <div><input type="checkbox" id="check-gluten">Gluten</div>
+                <div><input type="checkbox" id="check-soy">Soy</div>
+                <div><button type="button" id="filter-apply" class="bg-white hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow m-5">Apply</button></div>
+
             </div>
         </aside>
         <section class="basis-full flex grow items-center flex-col bg-white bg-opacity-80 rounded-md mt-5 max-h-fit">
@@ -53,6 +56,7 @@
         </aside>
     </main>
 
+
     <div class="music-player-mask ">
         <div id="musicPlayer">
             <iframe class=" " width="200px" height="90px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1421816401&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&showartwork=false&show_playcount=false&sharing=false&download=false&buying=false">
@@ -61,6 +65,7 @@
                 <input type="range" min="0" max="100" value="50" class="volume-slider">
                 <span class="volume-display"></span>
             </div>
+
         </div>
     </div>
 
