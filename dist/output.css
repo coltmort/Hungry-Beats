@@ -661,12 +661,21 @@ video {
   margin: 0.75rem;
 }
 
+.m-5 {
+  margin: 1.25rem;
+}
+
+.m-2 {
+  margin: 0.5rem;
+}
+
 .m-4 {
   margin: 1rem;
 }
 
-.m-5 {
-  margin: 1.25rem;
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mx-auto {
@@ -679,25 +688,25 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-.mr-1 {
-  margin-right: 0.25rem;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mt-5 {
   margin-top: 1.25rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.mr-2 {
+  margin-right: 0.5rem;
 }
 
 .box-border {
@@ -796,18 +805,6 @@ video {
   height: 75%;
 }
 
-.h-\[50px\] {
-  height: 50px;
-}
-
-.h-\[60px\] {
-  height: 60px;
-}
-
-.h-60 {
-  height: 15rem;
-}
-
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -821,32 +818,8 @@ video {
   width: 66.666667%;
 }
 
-.w-\[50\] {
-  width: 50;
-}
-
-.w-\[50px\] {
-  width: 50px;
-}
-
 .min-w-full {
   min-width: 100%;
-}
-
-.max-w-prose {
-  max-width: 65ch;
-}
-
-.max-w-\[\] {
-  max-width: ;
-}
-
-.max-w-\[ch\] {
-  max-width: ch;
-}
-
-.max-w-\[35ch\] {
-  max-width: 35ch;
 }
 
 .max-w-\[30ch\] {
@@ -1357,16 +1330,12 @@ video {
   gap: 2.5rem;
 }
 
-.gap-8 {
-  gap: 2rem;
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-2 {
   gap: 0.5rem;
-}
-
-.gap-4 {
-  gap: 1rem;
 }
 
 .gap-x-2 {
@@ -1651,12 +1620,12 @@ video {
   word-break: keep-all;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .rounded {
@@ -1768,6 +1737,11 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
 .border-gray-400 {
@@ -2448,12 +2422,53 @@ body{
   /* Centers the music player container horizontally */
 }
 
-html{
-  color: white;
+.volume-slider-container {
+  position: absolute;
+  /* Positions the container below the Soundcloud widget */
+  bottom: 50%;
+  /* Positions the container towards the bottom of the music player container */
+  left: 50%;
+  /* Positions the container horizontally in the center */
+  transform: translate(-50%, -50%);
+  /* Centers the container both horizontally and vertically */
+  width: 100%;
+  /* Sets the width of the container to be the full width of its parent */
+  text-align: center;
+  /* Centers the volume slider horizontally within its container */
 }
 
-section{
-  color: black;
+.volume-slider {
+  width: 40%;
+  /* Sets the width of the slider to be 50% of its container */
+  margin: 0 auto;
+  /* Centers the slider horizontally within its container */
+}
+
+.volume-display {
+  display: inline-block;
+  /* Displays the element as an inline-block */
+  text-align: center;
+  /* Centers the text within the element */
+}
+
+iframe {
+  width: 65%;
+  height:250px;
+  display:block;
+  margin:auto;
+}
+
+.symbol .mr-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: white;
+}
+
+input:hover {
+  cursor:pointer;
 }
 
 .hover\:bg-gray-300:hover {

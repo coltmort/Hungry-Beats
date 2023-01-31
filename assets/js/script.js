@@ -39,26 +39,14 @@ volumeSlider.addEventListener('input', function () {
 });
 
 function applyFilters(){
-    let checknuts = document.getElementById('check-nuts')
-    let checkdairy = document.getElementById('check-dairy')
-    let checkgluten = document.getElementById('check-gluten')
-    let checksoy = document.getElementById('check-soy')
-    let checksugar = document.getElementById('check-sugar')
-    let checkkosher = document.getElementById('check-kosher')
-    let checkpaleo = document.getElementById('check-paleo')
-    let checkpork = document.getElementById('check-pork')
-    let checkvegan = document.getElementById('check-vegan')
-    let checkvegetarian = document.getElementById('check-vegetarian')
-    if (checknuts.checked == true) edamamApiURL += "&health=tree-nut-free"
-    if (checkdairy.checked == true) edamamApiURL += "&health=dairy-free"
-    if (checkgluten.checked == true) edamamApiURL += "&health=gluten-free"
-    if (checksoy.checked == true) edamamApiURL += "&health=soy-free"
-    if (checksugar.checked === true) edamamApiURL += "&health=low-sugar"
-    if (checkkosher.checked === true) edamamApiURL += "&health=kosher"
-    if (checkpaleo.checked === true) edamamApiURL += "&health=paleo"
-    if (checkpork.checked === true) edamamApiURL += "&health=pork-free"
-    if (checkvegan.checked === true) edamamApiURL += "&health=vegan"
-    if (checkvegetarian.checked === true) edamamApiURL += "&health=vegetarian"
+    let filterCheckboxes = document.querySelectorAll('.filter-checkbox')
+    filterCheckboxes.forEach((e) => {
+        if (e.checked){
+            let filter = e.dataset.apifilter
+            edamamApiURL += `&health=${filter}`
+        }
+    }
+    )
 }
 
 function getEdamamApi(){
