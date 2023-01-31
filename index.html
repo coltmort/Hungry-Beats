@@ -23,19 +23,26 @@
 
 
     <main class="container flex flex-row gap-10 min-w-full max-h-fit">
-        <aside class="border-r-2 border-black basis-1/4 grow-0 md-basis-3/8">
+        <aside class="border-r-2 border-white basis-1/4 grow-0 md-basis-3/8">
             <h2 class="text-white text-2xl m-3">Filter ✒️</h2>
             <div class="flex flex-col text-white m-5">
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="tree-nut-free">Nut-free</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="dairy-free">Dairy-free</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="gluten-free">Gluten-free</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="soy-free">Soy-free</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="low-sugar">Low Sugar</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="kosher">Kosher</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="paleo">Paleo</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="pork-free">Pork-free</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="vegan">Vegan</div>
-                <div><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="vegetarian">Vegetarian</div>
+                <h3>Meal Type</h3>
+                <div class="ml-4"><input class="mealtype-checkbox mr-2" type="checkbox" data-apifilter="breakfast">Breakfast</div>
+                <div class="ml-4"><input class="mealtype-checkbox mr-2" type="checkbox" data-apifilter="brunch">Brunch</div>
+                <div class="ml-4"><input class="mealtype-checkbox mr-2" type="checkbox" data-apifilter="lunch/dinner">Lunch</div>
+                <div class="ml-4"><input class="mealtype-checkbox mr-2" type="checkbox" data-apifilter="lunch/dinner">Dinner</div>
+                <div class="ml-4"><input class="mealtype-checkbox mr-2" type="checkbox" data-apifilter="snack">Snack</div>
+                <h3>Restrictions</h3>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="tree-nut-free">Nut-free</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="dairy-free">Dairy-free</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="gluten-free">Gluten-free</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="soy-free">Soy-free</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="low-sugar">Low Sugar</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="kosher">Kosher</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="paleo">Paleo</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="pork-free">Pork-free</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="vegan">Vegan</div>
+                <div class="ml-4"><input class="filter-checkbox mr-2" type="checkbox" data-apifilter="vegetarian">Vegetarian</div>
                 <div><button type="button" id="filter-apply" class="bg-white hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow m-5">Apply</button></div>
 
             </div>

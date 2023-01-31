@@ -45,8 +45,14 @@ function applyFilters(){
             let filter = e.dataset.apifilter
             edamamApiURL += `&health=${filter}`
         }
-    }
-    )
+    })
+    let mealtypeCheckboxes = document.querySelectorAll('.mealtype-checkbox')
+    mealtypeCheckboxes.forEach((e) => {
+        if(e.checked){
+            let mealType = e.dataset.apifilter
+            edamamApiURL +=`&mealType=${mealType}`
+        }
+    })
 }
 
 function getEdamamApi(){
