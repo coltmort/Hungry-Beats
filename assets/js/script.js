@@ -86,7 +86,7 @@ function displayCachedRecipes(){
         var cachedIMG = element.images.SMALL.url
         var cachedTitle = element.label
         var card = document.createElement('div')
-        card.classList.add('card', 'flex', 'flex-col', 'border-b-2', 'w-2/3', 'my-2', 'gap-x-2')
+        card.classList.add('card', 'flex', 'flex-col', 'border-b-2', 'w-2/3', 'my-2', 'gap-x-2', 'pb-6')
         var newImg = document.createElement('img')
         newImg.setAttribute('href', cachedURL)
         newImg.setAttribute('src', cachedIMG)
