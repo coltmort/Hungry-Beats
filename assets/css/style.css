@@ -2,57 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html{
-    height: auto;
-    background: darkgrey;
-}
-body{
-    min-height: 100%;
-}
-*/
-
-#musicPlayer {
-    position: relative; /* Allows for absolute positioning of the volume slider container */
-    text-align: center; /* Centers the Soundcloud widget */
-    width: 80%; /* Sets the width of the music player container to be 80% of the screen */
-    margin: 0 auto; /* Centers the music player container horizontally */
-}
-
-.volume-slider-container {
-    position: absolute; /* Positions the container below the Soundcloud widget */
-    bottom: 50%; /* Positions the container towards the bottom of the music player container */
-    left: 50%; /* Positions the container horizontally in the center */
-    transform: translate(-50%, -50%); /* Centers the container both horizontally and vertically */
-    width: 100%; /* Sets the width of the container to be the full width of its parent */
-    text-align: center; /* Centers the volume slider horizontally within its container */
-}
-
-.volume-slider {
-    width: 40%; /* Sets the width of the slider to be 50% of its container */
-    margin: 0 auto; /* Centers the slider horizontally within its container */
-}
-
-.volume-display {
-    display: inline-block; /* Displays the element as an inline-block */
-    text-align: center; /* Centers the text within the element */
-}
-
-iframe {
-    width: 65%;
-    height:250px;
-    display:block;
-    margin:auto;
-}
-
-.symbol .mr-1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: white;
-}
-
 input:hover {
     cursor:pointer;
 }

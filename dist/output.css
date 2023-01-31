@@ -617,8 +617,12 @@ video {
   left: -0.25rem;
 }
 
-.bottom-20 {
-  bottom: 5rem;
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;
 }
 
 .isolate {
@@ -665,10 +669,6 @@ video {
   margin: 1.25rem;
 }
 
-.m-2 {
-  margin: 0.5rem;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -688,8 +688,11 @@ video {
   margin-bottom: 0.5rem;
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mr-2 {
   margin-right: 0.5rem;
 }
 
@@ -701,24 +704,12 @@ video {
   margin-top: 1rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mr-2 {
-  margin-right: 0.5rem;
-}
-
-.ml-2 {
-  margin-left: 0.5rem;
-}
-
-.ml-3 {
-  margin-left: 0.75rem;
-}
-
-.ml-4 {
-  margin-left: 1rem;
 }
 
 .box-border {
@@ -813,8 +804,16 @@ video {
   display: none;
 }
 
-.h-3\/4 {
-  height: 75%;
+.h-4\/5 {
+  height: 80%;
+}
+
+.h-3\/5 {
+  height: 60%;
+}
+
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .max-h-fit {
@@ -822,8 +821,40 @@ video {
   max-height: fit-content;
 }
 
-.max-h-screen {
-  max-height: 100vh;
+.max-h-\[screen\] {
+  max-height: screen;
+}
+
+.max-h-\[50vh\] {
+  max-height: 50vh;
+}
+
+.max-h-\[75vh\] {
+  max-height: 75vh;
+}
+
+.max-h-\[65vh\] {
+  max-height: 65vh;
+}
+
+.max-h-\[60vh\] {
+  max-height: 60vh;
+}
+
+.max-h-4 {
+  max-height: 1rem;
+}
+
+.max-h-\[\] {
+  max-height: ;
+}
+
+.min-h-\[60vh\] {
+  min-height: 60vh;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .w-2\/3 {
@@ -1751,11 +1782,6 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity));
-}
-
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
@@ -1912,6 +1938,10 @@ video {
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 
 .pb-6 {
@@ -2412,71 +2442,6 @@ video {
 .content-\[\'this-is-also-valid\]-weirdly-enough\'\] {
   --tw-content: 'this-is-also-valid]-weirdly-enough';
   content: var(--tw-content);
-}
-
-/* html{
-    height: auto;
-    background: darkgrey;
-}
-body{
-    min-height: 100%;
-}
-*/
-
-#musicPlayer {
-  position: relative;
-  /* Allows for absolute positioning of the volume slider container */
-  text-align: center;
-  /* Centers the Soundcloud widget */
-  width: 80%;
-  /* Sets the width of the music player container to be 80% of the screen */
-  margin: 0 auto;
-  /* Centers the music player container horizontally */
-}
-
-.volume-slider-container {
-  position: absolute;
-  /* Positions the container below the Soundcloud widget */
-  bottom: 50%;
-  /* Positions the container towards the bottom of the music player container */
-  left: 50%;
-  /* Positions the container horizontally in the center */
-  transform: translate(-50%, -50%);
-  /* Centers the container both horizontally and vertically */
-  width: 100%;
-  /* Sets the width of the container to be the full width of its parent */
-  text-align: center;
-  /* Centers the volume slider horizontally within its container */
-}
-
-.volume-slider {
-  width: 40%;
-  /* Sets the width of the slider to be 50% of its container */
-  margin: 0 auto;
-  /* Centers the slider horizontally within its container */
-}
-
-.volume-display {
-  display: inline-block;
-  /* Displays the element as an inline-block */
-  text-align: center;
-  /* Centers the text within the element */
-}
-
-iframe {
-  width: 65%;
-  height:250px;
-  display:block;
-  margin:auto;
-}
-
-.symbol .mr-1 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: white;
 }
 
 input:hover {
