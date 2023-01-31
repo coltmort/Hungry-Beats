@@ -38,16 +38,26 @@ volumeSlider.addEventListener('input', function () {
     volumeDisplay.innerText = this.value + '%'; // Updates the volume display to show the new volume level
 });
 
+function applyFilters(){
+    let filterCheckboxes = document.querySelectorAll('.filter-checkbox')
+    filterCheckboxes.forEach((e) => {
+        if (e.checked){
+            let filter = e.dataset.apifilter
+            edamamApiURL += `&health=${filter}`
+        }
+    })
+    let mealtypeCheckboxes = document.querySelectorAll('.mealtype-checkbox')
+    mealtypeCheckboxes.forEach((e) => {
+        if(e.checked){
+            let mealType = e.dataset.apifilter
+            edamamApiURL +=`&mealType=${mealType}`
+        }
+    })
+}
+
 function getEdamamApi(){
     nextRecipeClickCounter = 0
-    let checknuts = document.getElementById('check-nuts')
-    let checkmilk = document.getElementById('check-milk')
-    let checkgluten = document.getElementById('check-gluten')
-    let checksoy = document.getElementById('check-soy')
-    if (checknuts.checked == true) edamamApiURL += "&health=tree-nut-free"
-    if (checkmilk.checked == true) edamamApiURL += "&health=dairy-free"
-    if (checkgluten.checked == true) edamamApiURL += "&health=gluten-free"
-    if (checksoy.checked == true) edamamApiURL += "&health=soy-free"
+    applyFilters()
     return new Promise(function(resolve, reject){
     fetch(edamamApiURL)
     .then(response => 
