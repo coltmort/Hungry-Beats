@@ -22,15 +22,15 @@ const player = SC.Widget(document.querySelector('iframe'));
 const volumeSlider = document.querySelector('.volume-slider'); // Select the volume slider element from the HTML
 const volumeDisplay = document.querySelector('.volume-display'); // Select the element that displays the current volume level
 
-player.bind(SC.Widget.Events.READY, function() {
-    player.getVolume(function(volume) {
+player.bind(SC.Widget.Events.READY, function () {
+    player.getVolume(function (volume) {
         volumeSlider.value = volume; // Sets the volume slider's value to the current volume level
         volumeDisplay.innerText = volume + '%'; // Updates the volume display to show the current volume level
     });
 });
 
 // Adds event listener to the volume slider to change the volume when the user moves the slider
-volumeSlider.addEventListener('input', function() {
+volumeSlider.addEventListener('input', function () {
     player.setVolume(this.value); // Sets the volume of the player to the value of the slider
     volumeDisplay.innerText = this.value + '%'; // Updates the volume display to show the new volume level
 });
@@ -74,6 +74,6 @@ function saveCurrentRecipe() {
     localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
 }
 
-getEdamamApi()
-    .then(displayRecipe)
+//getEdamamApi()
+  //  .then(displayRecipe)
 

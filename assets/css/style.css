@@ -19,16 +19,16 @@ body{
 }
 
 .volume-slider-container {
-    position: absolute; /* Positions the container above the Soundcloud widget */
-    bottom: 0; /* Positions the container at the bottom of the music player container */
+    position: absolute; /* Positions the container below the Soundcloud widget */
+    bottom: 50%; /* Positions the container towards the bottom of the music player container */
     left: 50%; /* Positions the container horizontally in the center */
-    transform: translateX(-50%); /* Centers the container horizontally */
+    transform: translate(-50%, -50%); /* Centers the container both horizontally and vertically */
     width: 100%; /* Sets the width of the container to be the full width of its parent */
     text-align: center; /* Centers the volume slider horizontally within its container */
 }
 
 .volume-slider {
-    width: 50%; /* Sets the width of the slider to be 50% of its container */
+    width: 40%; /* Sets the width of the slider to be 50% of its container */
     margin: 0 auto; /* Centers the slider horizontally within its container */
 }
 
@@ -37,11 +37,11 @@ body{
     text-align: center; /* Centers the text within the element */
 }
 
-iframe{
-  width: 100%;
-  height:250px;
-  display:block;
-  margin:auto;
+iframe {
+    width: 65%;
+    height:250px;
+    display:block;
+    margin:auto;
 }
 
 .symbol .mr-1 {
@@ -49,11 +49,11 @@ iframe{
     top: 0;
     left: 0;
     height: 25px;
-    width: 25px; 
+    width: 25px;
     background-color: white;
 }
 
-input:hover{
+input:hover {
     cursor:pointer;
 }
 
