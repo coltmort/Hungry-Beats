@@ -14,13 +14,15 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;800;900&display=swap" rel="stylesheet">
 </head>
 
-<body class="from-teal-900 via-teal-800 via-teal-600 via-teal-700 via-teal-800 via-teal-900 via-teal-600 to-teal-900 bg-gradient-to-tr font-montserrat min-h-screen max-h-screen">
+<body class="from-teal-900 via-teal-700 to-teal-900 bg-gradient-to-r font-montserrat">
 
-    <header class="border-b-2 border-gray-400">
+    <header class="border-b-2 border-white flex justify-between items-center px-4">
         <h1 class=" text-2xl font-medium m-3 text-white">Hungry Beats</h1>
+        <div class='' id="edamam-badge" data-color="transparent"></div>
     </header>
 
-    <main class="container flex flex-row gap-10 min-w-full">
+
+    <main class="container flex flex-row gap-10 min-w-full max-h-fit">
         <aside class="border-r-2 border-black basis-1/4 grow-0 md-basis-3/8">
             <h2 class="text-white text-2xl m-3">Filter ✒️</h2>
             <div class="flex flex-col text-white m-5">
@@ -29,13 +31,14 @@
                 <div><input type="checkbox" id="check-gluten">Gluten</div>
                 <div><input type="checkbox" id="check-soy">Soy</div>
                 <div><button type="button" id="filter-apply" class="bg-white hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow m-5">Apply</button></div>
+
             </div>
         </aside>
-        <section class="basis-full flex grow items-center flex-col bg-white bg-opacity-80 rounded-md mt-5">
-            <h2 class="text-4xl">Maybe you should eat:</h2>
-            <div class="flex flex-col items-center">
-                <a class="recipe-name imageLink text-3xl " target="_blank" href="">Recipe Name</a>
-                <a class="imageLink" target="_blank" href="">
+        <section class="basis-full flex grow items-center flex-col bg-white bg-opacity-80 rounded-md mt-5 max-h-fit">
+            <h2 class="text-4xl my-4">Maybe you should eat:</h2>
+            <div class="flex flex-col items-center gap-4">
+                <a class="recipe-name imageLink text-3xl text-center max-w-[30ch]" target="_blank" href="">Recipe Name</a>
+                <a class="imageLink m-4" target="_blank" href="">
                 <img class="recipe-image" src="https://via.placeholder.com/300" alt="Placeholder Image" />
                 </a>
             </div>
@@ -44,45 +47,30 @@
                 <button class="next-recipe-button bg-white hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow m-5">Next Recipe</button>
             </div>
         </section>
-        <aside class="border-l-2 basis-1/4 flex flex-col items-center gap-2 grow-0">
-            <h2>Saved Recipes</h2>
-                <div class="card flex flex-col border-b w-2/3">
-                    <img src="https://via.placeholder.com/100"></img>
-                    <a href="">Saved Recipe Name</a>
-                </div>
-                <div class="card flex flex-col border-b w-2/3">
-                    <img src="https://via.placeholder.com/100"></img>
-                    <a href="">Saved Recipe Name</a>
-                </div>
-
-                <!-- <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
-                <p>Name of recipe</p>
-                <br></br>
-                <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
-                <p>Name of recipe</p>
-                <br></br>
-                <img src="https://via.placeholder.com/100" alt="Placeholder Image" />
-                <p>Name of recipe</p> -->
-                <button class="clear-recipe-button bg-white hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow">Clear Recipes</button>
+        <aside class="border-l-2 border-white basis-1/4 flex flex-col gap-2 grow-0 items-center relative max-h-screen">
+            <p class="text-xl mt-4">Saved Recipes</p>
+            <div class="saved-recipe-container flex flex-col items-center overflow-scroll h-3/4">
+                
+            </div>
+            <button class="clear-recipe-button bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-full shadow absolute bottom-20 mx-auto">Clear Recipes</button>
         </aside>
     </main>
 
-    
 
-    
+    <div class="music-player-mask ">
+        <div id="musicPlayer">
+            <iframe class=" " width="200px" height="90px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1421816401&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&showartwork=false&show_playcount=false&sharing=false&download=false&buying=false">
+            </iframe>
+            <div class="Volume-slider-container">
+                <input type="range" min="0" max="100" value="50" class="volume-slider">
+                <span class="volume-display"></span>
+            </div>
 
- 
-    
-    <div id="musicPlayer">
-        <iframe width="30%" height="250" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1421816401&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&showartwork=false&show_playcount=false&sharing=false&download=false&buying=false">
-        </iframe>
-        <div class="volume-slider-container">
-            <input type="range" min="0" max="100" value="50" class="volume-slider">
-            <span class="volume-display"></span>
         </div>
     </div>
 
     <script src="https://w.soundcloud.com/player/api.js" type="text/javascript"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://developer.edamam.com/attribution/badge.js"></script>
 </body>
 </html>

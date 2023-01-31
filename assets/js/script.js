@@ -6,6 +6,8 @@ let recipeImage = document.querySelector('.recipe-image')
 let imageLink = document.querySelectorAll(".imageLink")
 let nextRecipeButton = document.querySelector('.next-recipe-button')
 let saveRecipeButton = document.querySelector('.save-recipe-button')
+let savedRecipeContainer = document.querySelector('.saved-recipe-container')
+let clearRecipesButton = document.querySelector('.clear-recipe-button')
 let applyFilterButton = document.getElementById("filter-apply")
 let cachedRecipes = []
 let currentRecipe
@@ -13,6 +15,7 @@ let nextRecipeClickCounter
 
 nextRecipeButton.addEventListener('click', displayRecipe)
 saveRecipeButton.addEventListener('click', saveCurrentRecipe)
+clearRecipesButton.addEventListener('click', clearCachedRecipes)
 applyFilterButton.addEventListener("click",()=>{
     getEdamamApi()
         .then(displayRecipe)
@@ -45,7 +48,6 @@ function getEdamamApi(){
     if (checkmilk.checked == true) edamamApiURL += "&health=dairy-free"
     if (checkgluten.checked == true) edamamApiURL += "&health=gluten-free"
     if (checksoy.checked == true) edamamApiURL += "&health=soy-free"
-
     return new Promise(function(resolve, reject){
     fetch(edamamApiURL)
     .then(response => 
@@ -56,7 +58,9 @@ function getEdamamApi(){
 }
 
 function displayRecipe() {
-    if (nextRecipeClickCounter+1 == recievedRecipes.length){
+
+    if (nextRecipeClickCounter+1 === recievedRecipes.length){
+
         getEdamamApi()
     }
     currentRecipe = recievedRecipes[nextRecipeClickCounter].recipe
@@ -70,10 +74,55 @@ function displayRecipe() {
 }
 
 function saveCurrentRecipe() {
+    refreshCachedRecipes()
     cachedRecipes.unshift(currentRecipe)
     localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
+    displayCachedRecipes()
+}
+function refreshCachedRecipes(){
+    cachedRecipes = JSON.parse(localStorage.getItem('cached-recipes'))
+    if(cachedRecipes === null){
+        cachedRecipes = []
+    }
 }
 
-//getEdamamApi()
-  //  .then(displayRecipe)
+function displayCachedRecipes(){
+    let displayedRecipes = document.querySelectorAll('div.card')
+    displayedRecipes.forEach((element) =>{
+        element.remove()
+    })
+    refreshCachedRecipes()
+
+    if(typeof cachedRecipes !== 'undefined' && cachedRecipes.length > 0){
+    cachedRecipes.forEach(
+        (element) =>{
+        var cachedURL = element.url
+        var cachedIMG = element.images.SMALL.url
+        var cachedTitle = element.label
+        var card = document.createElement('div')
+        card.classList.add('card', 'flex', 'flex-col', 'border-b-2', 'w-2/3', 'my-2', 'gap-x-2', 'pb-6')
+        var newImg = document.createElement('img')
+        newImg.setAttribute('href', cachedURL)
+        newImg.setAttribute('src', cachedIMG)
+        var title = document.createElement('a')
+        title.setAttribute('href', cachedURL)
+        title.innerText = cachedTitle
+        savedRecipeContainer.appendChild(card)
+        card.appendChild(newImg)
+        card.appendChild(title)
+
+})
+}}
+
+function clearCachedRecipes(){
+    cachedRecipes = []
+    localStorage.setItem('cached-recipes', JSON.stringify(cachedRecipes))
+    displayCachedRecipes()
+}
+
+displayCachedRecipes()
+
+getEdamamApi()
+    .then(displayRecipe)
+
 
