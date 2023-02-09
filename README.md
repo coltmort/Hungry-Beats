@@ -38,8 +38,8 @@ THEN there is a button to save it.
 
 # Trials we experienced 😤
 - Getting the soundbar to display correctly was difficult.
--
--
+- Utilizing the API with EDAMAM to display true randomization of a well rounded selection of meals to choose from; rather than 2-7 meals.
+- Displaying meals that corresponded to the filtering for allergens. 
 
 # APIs used 🖥️
 Used for searching Recipes:
@@ -55,7 +55,7 @@ Used for searching music:
 - "https://www.figma.com/file/eICwPgqaHYFXVULctPFEPj0z/Hungry-Beats?node-id=0%3A1&t=3jSQZd2gFFkqsYqr-1"
 
 # Deployed site 🚀
-- ""
+- "https://github.com/coltmort/Hungry-Beats"
 
 # Display of working site 🌐
-![Alt text](https://i.imgur.com/sF7mOXR.png)
+![Alt text](https://i.imgur.com/IrmU6Pg.png)
